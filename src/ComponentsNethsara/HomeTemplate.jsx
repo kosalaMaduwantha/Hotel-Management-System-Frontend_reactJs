@@ -1,0 +1,21 @@
+import React, { Component } from 'react'
+import HomePart01 from './HomePart01'
+import HomePart02 from './HomePart02'
+import HomePart03 from './HomePart03'
+import Footer01 from './Footer01'
+
+class HomeTemplate extends Component {
+    render() {
+        return (
+            <div>
+                <HomePart01/>
+                <HomePart02/>
+                <HomePart03/>
+                <Footer01/>
+                
+            </div>
+        )
+    }
+}
+
+export default HomeTemplate

@@ -1,0 +1,43 @@
+.HomePart01{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 48vw;
+    background-image: url("../../images/AVI_8387.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.header-row{
+}
+
+.menuBtn{
+    margin-left: 30%;
+    background: none;
+    padding-left: 2.5%;
+    padding-top: 1%;
+    padding-right: 2.5%;
+    padding-bottom: 1%;
+    color: white;
+    border: 2px solid white;
+}
+.logo-img{
+    width: 200px;
+
+}
+.yellow-btn-group{
+    margin-top: 300px;
+}
+.yellow-btn{
+    background-color: rgb(255, 177, 8);
+    border: none;
+    padding: 2%;
+    color: white;
+    font-weight: 500;
+    width: 200px;
+}
+.yellow-btn :hover{
+    background-color: rgb(160, 109, 0);
+    color: black;
+
+}
