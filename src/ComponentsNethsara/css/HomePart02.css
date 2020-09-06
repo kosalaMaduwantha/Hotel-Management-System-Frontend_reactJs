@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Satisfy&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Mr+Dafoe&display=swap');
+
+.HomePart02{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 105vh;
+    background-image: url("../../images/AVI_8533.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.welcome-txt{
+    color: white;
+}
+.welcome-txt-rf{
+    font-family: 'Satisfy', cursive;
+    font-size: 60px;
+}
+
+.card{
+    margin: 40px;
+    width: 400px;
+    height: 450px;
+    padding-top: 40px;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 30px;
+    border-bottom-left-radius: 0px;
+    background-image: url("../../images/AVI_8533.jpg");
+}
+.card h3{
+    font-size: 18px;
+    color: white;
+}
+
+.card h1{
+    font-family: 'Mr Dafoe', cursive;
+    font-size: 50px;
+    color: white;
+}
+
+.card-img{
+    width: 350px;
+    padding: 20px;
+}
