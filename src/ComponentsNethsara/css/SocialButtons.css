@@ -1,0 +1,22 @@
+.sc-btns{
+    position: fixed;
+    display: block;
+    z-index: 5;
+    right: 0;
+    margin-top: 400px;
+}
+
+.fb-btn{
+    width: 40px;
+    height: 40px;
+    margin-top: 5px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    color: white;
+    font-weight: bold;
+    background-color: rgb(231, 158, 0);
+   padding-left: 15px;
+    display: flex;
+    vertical-align: middle;
+    align-items: center;
+}
