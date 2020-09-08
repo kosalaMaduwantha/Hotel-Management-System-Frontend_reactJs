@@ -1,0 +1,47 @@
+.Accomodation01{margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100vh;
+    background-image: url("../../images/AVI_8684.jpg");
+    background-blend-mode: multiply;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.homebtn{
+    background: none;
+    color: white;
+    border: none;
+}
+.AccomImg{
+    width: 250px;
+}
+.accom-ulist{
+    list-style-type: none;
+    text-align: right;
+    margin-right: 350px;
+    color: white;
+    font-size: large;
+}
+.accom-list{
+    padding-bottom: 20px;
+}
+
+.y-btn{
+    background-color: rgb(231, 158, 0);
+    border: none;
+    padding: 2%;
+    color: white;
+    font-weight: 500;
+    width: 200px;
+    margin-top: 100px;
+}
+.tr-tab{
+    margin-top: 20px;
+}
+.res-input{
+    border-radius: 10px;
+    padding: 20px;
+    width: 500px;
+    height: 30px;
+    margin-left: 20px;
+}
