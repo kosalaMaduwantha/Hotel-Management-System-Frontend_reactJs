@@ -4,7 +4,7 @@ class CustManagerTemplate extends Component {
     render() {
         return (
             <div>
-                
+                <h1>this is cust manager template</h1>
             </div>
         );
     }
