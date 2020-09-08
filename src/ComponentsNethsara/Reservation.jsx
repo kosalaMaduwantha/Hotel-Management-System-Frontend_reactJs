@@ -43,27 +43,34 @@ export class Reservation extends Component {
                             <td>Name with Initials : </td>
                             <td><input type="text" className="res-input" name="name" placeholder="Enter your name"/></td>
                         </tr>
+                        <br/>
                         <tr className="tr-tab">
                             <td>Email : </td>
                             <td><input type="text" className="res-input" name="email" placeholder="Enter your emial"/></td>
                         </tr>
+                        <br/>
                         <tr>
                             <td>Chek-In date : </td>
                             <td><input type="text" className="res-input" name="c-in-date" placeholder="MM/DD/YY"/></td>
                         </tr>
+                        <br/>
                         <tr>
                             <td>Chek-Out date : </td>
                             <td><input type="text" className="res-input" name="c-out-date" placeholder="MM/DD/YY"/></td>
                         </tr>
+                        <br/>
                         <tr>
                             <td>No. of adults : </td>
                             <td><input type="text" className="res-input" name="adults" placeholder="Enter no of adults"/></td>
                         </tr>
+                        <br/>
                         <tr>
                             <td>No. of children : </td>
                             <td><input type="text" className="res-input" name="children" placeholder="Enter no of children"/></td>
                         </tr>
                     </table>
+
+                    <input type="submit" style={{marginBottom:"50px"}} className="submit-btn" value="Submit"/>
                     
                 </div>
                 <Footer01/>
