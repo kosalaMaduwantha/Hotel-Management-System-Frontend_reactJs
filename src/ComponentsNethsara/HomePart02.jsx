@@ -24,24 +24,24 @@ class HomePart02 extends Component {
                 </div>
                 <div className="row">
                     <div className="col-sm-12 col-md-4 col-lg-4" >
-                        <div className="card">
+                        <div className="home-card">
                             <h3>ROCK FORT</h3>
                             <h1>Event</h1>
-                            <img className="card-img" src={Event} alt=""/>
+                            <img className="home-card-img" src={Event} alt=""/>
                         </div>
                     </div>
                     <div className="col-sm-12 col-md-4 col-lg-4">
-                    <div className="card">
+                    <div className="home-card">
                             <h3>ROCK FORT</h3>
                             <h1>Accomondation</h1>
-                            <img className="card-img" src={Accomodation} alt=""/>
+                            <img className="home-card-img" src={Accomodation} alt=""/>
                         </div>
                     </div>
                     <div className="col-sm-12 col-md-4 col-lg-4">
-                    <div className="card">
+                    <div className="home-card">
                             <h3>ROCK FORT</h3>
                             <h1>Travel</h1>
-                            <img className="card-img" src={Travel} alt=""/>
+                            <img className="home-card-img" src={Travel} alt=""/>
                         </div>
                     </div>
                 </div>
