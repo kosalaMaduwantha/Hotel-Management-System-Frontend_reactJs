@@ -18,7 +18,7 @@
     font-size: 60px;
 }
 
-.card{
+.home-card{
     margin: 40px;
     width: 400px;
     height: 450px;
@@ -29,18 +29,18 @@
     border-bottom-left-radius: 0px;
     background-image: url("../../images/AVI_8533.jpg");
 }
-.card h3{
+.home-card h3{
     font-size: 18px;
     color: white;
 }
 
-.card h1{
+.home-card h1{
     font-family: 'Mr Dafoe', cursive;
     font-size: 50px;
     color: white;
 }
 
-.card-img{
+.home-card-img{
     width: 350px;
     padding: 20px;
 }
