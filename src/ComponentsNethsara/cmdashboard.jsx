@@ -1,10 +1,9 @@
-import React from 'react'
-import './css/cmdashboard.css';
-
+import React, { Component } from 'react'
+import './css/CmDashboard.css';
 import Rockfort from '../images/1.png';
 
 
-class App extends React.Component {
+class CmDashboard extends Component {
     render() {
       return (
         <div className="App">
@@ -28,54 +27,92 @@ class App extends React.Component {
 
               <div className="profile_info">
                 <img src={Rockfort} className="profile_image"/>
-                <h6>Saman Weerasiri</h6>
-                <h4>Finance Manager</h4>
+                <h6>Raveen Vishvajith</h6>
+                <h4>Customer Manager</h4>
 
               </div>
 
               <div>
-                <a href="#"><i className="fas fa-desktop"></i><span>Calender</span></a>
-                <a href="#"><i className="fas fa-cogs"></i><span>Reservations</span></a>
-                <a href="#"><i className="fas fa-table"></i><span>Customer Details</span></a>
-                <a href="#"><i className="fas fa-th"></i><span>Statistics</span></a>
+                <a href="/custmanager"><i className="fas fa-calendar-alt"></i><span>Calender</span></a>
+                <a href="/resdashboard"><i className="fas fa-th"></i><span>Reservations</span></a>
+                <a href="/custdetails"><i className="fas fa-table"></i><span>Customer Details</span></a>
+                <a href="/stats"><i className="fas fa-cogs"></i><span>Statistics</span></a>
               </div>
             </div>
         
             
             <div className="content">
+
+                <h2 className="content-head">Statistics</h2>
         
                 <div className="stat-card-div" style={{padding:"15px"}}>
 
                   <h3 className="stat-card-head">Rock fort Unawatuna</h3>
                   <div className="row">
-                    <div className=" statCard" >
-                    <p>Room Reservations</p>
-                    </div>
+
                     <div className="statCard" >
-                    <p>Banquet Bookings</p>
+                      <h6>Room Reservations</h6>
+                      <h2 className="statCard-h2">06</h2>
                     </div>
-                    <div className=" statCard" >
-                    <p>Supplies</p>
+
+                    <div className="statCard" >
+                      <h6>Banquet Bookings</h6>
+                      <h2 className="statCard-h2">45</h2>
+                    </div>
+
+                    <div className="statCard" >
+                      <h6>Supplies</h6>
+                      <h2 className="statCard-h2">09</h2>
+                    </div>
+
+                  </div>
+
+                  <div className="row">
+
+                    <div className="statCard" >
+                      <h6>No. of Rooms</h6>
+                      <h2 className="statCard-h2">40</h2>
+                    </div>
+
+                    <div className="statCard" >
+                      <h6>No. of Customers</h6>
+                      <h2 className="statCard-h2">08</h2>
+                    </div>
+
+                    <div className="statCard" >
+                      <h6>Offers</h6>
+                      <h2 className="statCard-h2">02</h2>
+                    </div>
+
+                  </div>
+
+                  <h3 className="stat-card-head" style={{marginTop:"60px"}}>Rock fort beach resort & Spa</h3>
+                  <div className="row">
+
+                    <div className="statCard" >
+                      <h6>Room Reservations</h6>
+                      <h2 className="statCard-h2">200</h2>
+                    </div>
+
+                    <div className="statCard" >
+                      <h6>Banquet Bookings</h6>
+                      <h2 className="statCard-h2">200</h2>
+                    </div>
+
+                    <div className="statCard" >
+                      <h6>Supplies</h6>
+                      <h2 className="statCard-h2">200</h2>
+                    </div>
+
                   </div>
 
                 </div>
-
-                </div>
-              <div className="card">
-                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's 
-                  standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make fa-rotate-270 
-                  a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining 
-                  essentially unchanged.</p>
-              </div>
               
             </div>
-
-   
-
 
         </div>
       )
     }
   }
   
-  export default App;
+  export default CmDashboard;
