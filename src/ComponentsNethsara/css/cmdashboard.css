@@ -5,7 +5,7 @@ body{
     background-color: #D3D3D3;
   }
   
-  header{
+header{
     z-index: 1;
     position: fixed;
     background: #09298a;
@@ -84,13 +84,14 @@ body{
     color: #000;
     display: block;
     width: 100%;
+    padding-left: 30px;
     line-height: 60px;
     text-decoration: none;
-    
     box-sizing: border-box;
     transition: 0.5s;
     transition-property: background;
     align-items: center;
+    text-align: justify;
   }
   
   .sidebar a:hover{
@@ -127,8 +128,8 @@ body{
   
   #check:checked ~ .sidebar a{
     font-size: 20px;
-    margin-left: 165px;
-    width: 100%;
+    margin-left: 185px;
+    width: 80px;
   }
   
   .content{
@@ -176,10 +177,40 @@ body{
       margin-bottom: 20px;
   }
 
+  .content-head{
+    color: rgb(71, 71, 71);
+    font-size: 30px;
+    text-align: left;
+    margin-left: 60px;
+    margin-top: 20px;
+  }
   .stat-card-div{
     background: #fff;
+    border-radius: 15px;
+    margin-bottom: 20px;
+    margin-top: 30px;
     
   }
+  .stat-card-head{
+    color: rgb(102, 102, 102);
+    font-size: 20px;
+    text-align: left;
+    margin-left: 60px;
+    margin-top: 30px;
+  }
+  .statCard h6{
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+    margin-top: 10px;
+  }
+  .statCard-h2{
+    text-align: center;
+    color: white;
+    font-weight: bold;
+    margin-top: 20px;
+    font-size: 40px;
+  }
+
   .content .row .statCard{
     border-radius: 15px;
     background: #ffc524;
@@ -193,92 +224,3 @@ body{
     text-align: center;
   }
 
-  p{
-      text-align: center;
-      font-weight: bold;
-      color: #b6a9a9;
-  }
-  /* Responsive CSS */
-  
-  @media screen and (max-width: 780px){
-    .sidebar{
-      display: none;
-    }
-  
-    #sidebar_btn{
-      display: none;
-    }
-  
-    .content{
-      margin-left: 0;
-      margin-top: 0;
-      padding: 10px 20px;
-      transition: 0s;
-    }
-  
-    #check:checked ~ .content{
-      margin-left: 0;
-    }
-  
-    .mobile_nav{
-      display: block;
-      width: calc(100% - 0%);
-    }
-  
-    .nav_bar{
-      background: #222;
-      width: (100% - 0px);
-      margin-top: 70px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 10px 20px;
-    }
-  
-    .nav_bar .mobile_profile_image{
-      width: 50px;
-      height: 50px;
-      border-radius: 50%;
-    }
-  
-    .nav_bar .nav_btn{
-      color: #fff;
-      font-size: 22px;
-      cursor: pointer;
-      transition: 0.5s;
-      transition-property: color;
-    }
-  
-    .nav_bar .nav_btn:hover{
-      color: #19B3D3;
-    }
-  
-    .mobile_nav_items{
-      background: #2F323A;
-      display: none;
-    }
-  
-    .mobile_nav_items a{
-      color: #fff;
-      display: block;
-      text-align: center;
-      letter-spacing: 1px;
-      line-height: 60px;
-      text-decoration: none;
-      box-sizing: border-box;
-      transition: 0.5s;
-      transition-property: background;
-    }
-  
-    .mobile_nav_items a:hover{
-      background: #19B3D3;
-    }
-  
-    .mobile_nav_items i{
-      padding-right: 10px;
-    }
-  
-    .active{
-      display: block;
-    }
-  }

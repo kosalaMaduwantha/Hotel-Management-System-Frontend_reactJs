@@ -29,14 +29,17 @@
     border-bottom-left-radius: 0px;
     background-image: url("../../images/AVI_8533.jpg");
 }
-.home-card h3{
+.home-card .card-h3{
     font-size: 18px;
     color: white;
 }
 
-.home-card h1{
+.home-card .card-h1{
     font-family: 'Mr Dafoe', cursive;
     font-size: 50px;
+    color: white;
+}
+.home-p{
     color: white;
 }
 

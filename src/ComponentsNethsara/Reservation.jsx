@@ -1,10 +1,33 @@
 import React, { Component } from 'react'
 import './css/Reservation.css';
+import Reserve from '../images/reserve.png'
 import AccomodationLogo from '../images/reservimg.png'
 import SocialButtons from './SocialButtons'
 import Footer01 from './Footer01';
 
 export class Reservation extends Component {
+
+    constructor(props) {
+        super(props)
+        this.state = {
+            fname:"",
+            cINdate:"",
+            cOUTdate:"",
+            adults:"",
+            lname:"",
+            nic:"",
+            email:"",
+            phone:"",
+            country:"",
+            children:""
+        }
+    }
+
+    handleInput = (e) => {
+        this.setState({[e.target.name]:e.target.value}, ()=>{
+            console.log(this.state)
+        });
+    }
     render() {
         return (
             <div>
@@ -37,40 +60,65 @@ export class Reservation extends Component {
                     </div>
                 </div>
 
-                <div>
-                    <table style={{marginTop:"100px", marginBottom:"50px", marginLeft:"450px"}}>
+                <div style={{display:"flex"}}>
+                    <table style={{marginTop:"100px", marginBottom:"50px", marginLeft:"100px"}}>
                         <tr>
-                            <td>Name with Initials : </td>
-                            <td><input type="text" className="res-input" name="name" placeholder="Enter your name"/></td>
+                            <td>First name : </td>
+                            <td><input onChange={this.handleInput} type="text" className="res-input" name="fname" placeholder="Enter your name"/></td>
                         </tr>
                         <br/>
-                        <tr className="tr-tab">
+                        <tr>
+                            <td>Last name : </td>
+                            <td><input onChange={this.handleInput} type="text" className="res-input" name="lname" placeholder="Enter your name"/></td>
+                        </tr>
+                        <br/>
+                        <tr>
+                            <td>NIC / Passport NO : </td>
+                            <td><input onChange={this.handleInput} type="text" className="res-input" name="nic" placeholder="Enter your emial"/></td>
+                        </tr>
+                        <br/>
+                        <tr>
                             <td>Email : </td>
-                            <td><input type="text" className="res-input" name="email" placeholder="Enter your emial"/></td>
+                            <td><input onChange={this.handleInput} type="text" className="res-input" name="email" placeholder="Enter your emial"/></td>
+                        </tr>
+                        <br/>
+                        <tr>
+                            <td>Phone : </td>
+                            <td><input onChange={this.handleInput} type="text" className="res-input" name="phone" placeholder="Enter your emial"/></td>
+                        </tr>
+                        <br/>
+                        <tr>
+                            <td>Country : </td>
+                            <td><input onChange={this.handleInput} type="text" className="res-input" name="country" placeholder="Enter your emial"/></td>
                         </tr>
                         <br/>
                         <tr>
                             <td>Chek-In date : </td>
-                            <td><input type="text" className="res-input" name="c-in-date" placeholder="MM/DD/YY"/></td>
+                            <td><input onChange={this.handleInput} type="date" className="res-input" name="cINdate" placeholder="MM/DD/YY"/></td>
                         </tr>
                         <br/>
                         <tr>
                             <td>Chek-Out date : </td>
-                            <td><input type="text" className="res-input" name="c-out-date" placeholder="MM/DD/YY"/></td>
+                            <td><input onChange={this.handleInput} type="date" className="res-input" name="cOUTdate" placeholder="MM/DD/YY"/></td>
                         </tr>
                         <br/>
                         <tr>
                             <td>No. of adults : </td>
-                            <td><input type="text" className="res-input" name="adults" placeholder="Enter no of adults"/></td>
+                            <td><input onChange={this.handleInput} type="text" className="res-input" name="adults" placeholder="Enter no of adults"/></td>
                         </tr>
                         <br/>
                         <tr>
                             <td>No. of children : </td>
-                            <td><input type="text" className="res-input" name="children" placeholder="Enter no of children"/></td>
+                            <td><input onChange={this.handleInput} type="text" className="res-input" name="children" placeholder="Enter no of children"/></td>
+                        </tr>
+                        <br/>
+                        <br/>
+                        <tr style={{paddingLeft:"100px"}}>
+                            <input type="submit" style={{marginBottom:"50px"}} className="submit-btn" value="Submit"/>
                         </tr>
                     </table>
 
-                    <input type="submit" style={{marginBottom:"50px"}} className="submit-btn" value="Submit"/>
+                    <img src={Reserve} alt=""  style={{width:"650px", height:"300px", paddingTop:"100px"}}/>
                     
                 </div>
                 <Footer01/>
