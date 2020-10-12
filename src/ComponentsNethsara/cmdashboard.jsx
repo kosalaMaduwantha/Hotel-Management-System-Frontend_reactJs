@@ -20,8 +20,6 @@ class CmDashboard extends Component {
                 <a href="#" className="logout_btn">Logout</a>
               </div>
             </header>
-          
-          
             
             <div className="sidebar">
 
