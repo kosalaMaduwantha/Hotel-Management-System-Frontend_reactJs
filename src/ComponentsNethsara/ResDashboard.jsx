@@ -62,10 +62,10 @@ class ResDashboard extends Component {
                     </div>
 
                     <div>
-                    <a href="/custmanager"><i className="fas fa-calendar-alt"></i><span>Calender</span></a>
-                    <a href="/resdashboard"><i className="fas fa-th"></i><span>Reservations</span></a>
-                    <a href="/custdetails"><i className="fas fa-table"></i><span>Customer Details</span></a>
-                    <a href="/stats"><i className="fas fa-cogs"></i><span>Statistics</span></a>
+                        <a href="/cmcalendar"><i className="fas fa-calendar-alt"></i><span>Calender</span></a>
+                        <a href="/resdashboard"><i className="fas fa-th"></i><span>Reservations</span></a>
+                        <a href="/custdetails"><i className="fas fa-table"></i><span>Customer Details</span></a>
+                        <a href="/stats"><i className="fas fa-cogs"></i><span>Statistics</span></a>
                     </div>
                 </div>
 
@@ -88,7 +88,6 @@ class ResDashboard extends Component {
                                         <th>Check-In</th>
                                         <th>Check-Out</th>
                                         <th>Assign a Room</th>
-                                        
                                     </tr>
                                 </thead>
 
@@ -100,7 +99,7 @@ class ResDashboard extends Component {
                                                     <td>{item.check_in_date}</td>
                                                     <td>{item.check_out_date}</td>
                                                     <td>
-                                                        <Select defaultValue="Assign" style={{ width: 120 }} onChange={handleChange}>
+                                                        <Select defaultValue={item.room_id} style={{ width: 120 }} onChange={handleChange}>
                                                             {this.state.rooms.map((item) => {
                                                                 return(
                                                                 <Option>{item.room_id}</Option>

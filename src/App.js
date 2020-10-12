@@ -9,6 +9,7 @@ import Reservation from './ComponentsNethsara/Reservation';
 import Stats from './ComponentsNethsara/CmDashboard';
 import CustDetails from './ComponentsNethsara/CustDetails';
 import ResDashboard from './ComponentsNethsara/ResDashboard';
+import CmCalendar from './ComponentsNethsara/CmCalendar'
 
 
 function App() {
@@ -23,6 +24,7 @@ function App() {
         <Route path="/stats" component={Stats}/>
         <Route path="/custdetails" component={CustDetails}/>
         <Route path="/resdashboard" component={ResDashboard}/>
+        <Route path="/cmcalendar" component={CmCalendar}/>
       </Router>
 
     </div>
