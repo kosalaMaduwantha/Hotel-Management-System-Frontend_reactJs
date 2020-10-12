@@ -1,0 +1,131 @@
+.form-container{
+    position: relative;
+    bottom: 350px;
+    
+}
+
+.first_text{
+    position: relative;
+    width: 350px;
+    top: 80px;
+    left:20px;
+    
+}
+
+.last_text{
+    position: relative;
+    width: 350px;
+    top: 80px;
+    left:80px;
+    
+}
+
+.gender-controll{
+    position: relative;
+    width: 100px;
+    top: 184px;
+    right:600px;
+
+   
+}
+
+.gender-text{
+    position: relative;
+    width: 80px;
+    top: 200px;
+    right:680px;
+}
+
+.birth-date{
+    position: relative;
+    width: 320px;
+    top: 270px;
+    right:90px;
+    
+}
+
+.nic{
+    position: relative;
+    width: 320px;
+    top: 380px;
+    right:410px;
+}
+
+.Address{
+    position: relative;
+    width: 320px;
+    top: 435px;
+    right:105px;
+}
+
+.Telephone{
+    position: relative;
+    width: 290px;
+    top: 535px;
+    right:425px;
+}
+
+
+
+
+
+.e_name{
+    position: relative;
+    width: 320px;
+    top: 590px;
+    right:90px;
+}
+
+.e_address{
+    position: relative;
+    width: 320px;
+    top: 690px;
+    right:410px;
+    
+}
+
+.e_contact{
+    position: relative;
+    width: 320px;
+    top: 745px;
+    right:40px;
+    
+   
+    
+}
+
+.submit-employee{
+    position: relative;
+    width: 120px;
+    top: 1190px;
+    right: 556px;
+}
+
+.educational_qualification{
+    position: relative;
+    width: 420px;
+    height: 100px;
+    top: 875px;
+    right:360px;
+    
+}
+
+
+.proff_qualification{
+    position: relative;
+    width: 420px;
+    height: 100px;
+    top: 955px;
+    right:140px;
+}
+
+
+
+
+.error-massage-fname{
+    position: absolute;
+    right: 380px;
+    color: red;
+    bottom: 1400px;
+}
+

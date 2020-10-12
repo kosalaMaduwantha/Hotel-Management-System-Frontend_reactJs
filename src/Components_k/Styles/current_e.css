@@ -1,0 +1,38 @@
+.employee-view-kosala{
+    position: relative;
+    bottom:320px;
+}
+
+
+
+.card-view{
+    position: relative;
+    bottom:270px;
+}
+
+.button-delete{
+    position: relative;
+    left: 375px;
+    top: 145px;
+}
+
+.button-update{
+    position: relative;
+    left: 415px;
+    top: 145px;
+}
+
+
+.title-name{
+    position: relative;
+    float: left;
+}
+
+.detail{
+    align-items: flex-start;
+}
+
+.topic-view{
+    text-align: left;
+}
+
