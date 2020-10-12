@@ -33,10 +33,10 @@ class CmDashboard extends Component {
               </div>
 
               <div>
-                <a href="/custmanager"><i className="fas fa-calendar-alt"></i><span>Calender</span></a>
-                <a href="/resdashboard"><i className="fas fa-th"></i><span>Reservations</span></a>
-                <a href="/custdetails"><i className="fas fa-table"></i><span>Customer Details</span></a>
-                <a href="/stats"><i className="fas fa-cogs"></i><span>Statistics</span></a>
+                    <a href="/cmcalendar"><i className="fas fa-calendar-alt"></i><span>Calender</span></a>
+                    <a href="/resdashboard"><i className="fas fa-th"></i><span>Reservations</span></a>
+                    <a href="/custdetails"><i className="fas fa-table"></i><span>Customer Details</span></a>
+                    <a href="/stats"><i className="fas fa-cogs"></i><span>Statistics</span></a>
               </div>
             </div>
         

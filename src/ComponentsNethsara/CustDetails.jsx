@@ -37,7 +37,7 @@ class CustDetails extends Component {
                     console.log(id);
                     const args = {
                       message: "Notification",
-                      description: "You have successfully deleted event " + id,
+                      description: "You have successfully deleted Customer " + id,
                       duration: 0,
                     };
                     notification.open(args);
@@ -83,7 +83,7 @@ class CustDetails extends Component {
                     </div>
 
                     <div>
-                        <a href="/custmanager"><i className="fas fa-calendar-alt"></i><span>Calender</span></a>
+                        <a href="/cmcalendar"><i className="fas fa-calendar-alt"></i><span>Calender</span></a>
                         <a href="/resdashboard"><i className="fas fa-th"></i><span>Reservations</span></a>
                         <a href="/custdetails"><i className="fas fa-table"></i><span>Customer Details</span></a>
                         <a href="/stats"><i className="fas fa-cogs"></i><span>Statistics</span></a>
