@@ -10,17 +10,40 @@ class CmCalendar extends Component {
     constructor(props){
         super(props);
         this.state={
-            reservation:[]
+            reservation:[],
+            formattedArray:[]
         }
-
     }
     
     componentDidMount(){
-        this.fetchRes();
+        //this.fetchdata();
+
+        fetch("http://127.0.0.1:8000/res/").then((data) => data.json()).then(res => this.setState({reservation : res})).catch(err => console.log(err));
+        
     }
 
-    fetchRes = () =>{
-        fetch("http://127.0.0.1:8000/res/").then(res => res.json()).then(data => this.setState({reservation:data})).catch(err => console.log(err))
+    // fetchdata = () =>{
+        
+    // }
+
+    formatData = () => {
+       console.log(this.state.reservation)
+        var formattedData = [];
+        var obj = {};
+
+        this.state.reservation.map(item => {
+            return(
+                obj = {
+                    title:item.res_id,
+                    start:item.check_in_date,
+                    end:item.check_out_date
+                }, formattedData.push(obj)
+            );
+        });
+        console.log(formattedData);
+        //return(formattedData)
+        this.setState({formattedArray : formattedData});
+
     }
 
     render() { 
@@ -61,24 +84,22 @@ class CmCalendar extends Component {
                         </div>
                     </div>
 
-                
-
                     <div className="content">
 
                         <h2 className="content-head">Reservation Calendar</h2>
 
+                        <button onClick={this.formatData}>check</button>
+
                         <div className="stat-card-div" style={{padding:"20px", zIndex:"-5"}}>
                             
-                                <FullCalendar style={{zIndex:"5"}}
-                                plugins={[ dayGridPlugin ]}
-                                initialView="dayGridMonth"
+                                <FullCalendar 
+                                    style={{zIndex:"5"}}
+                                    plugins={[ dayGridPlugin ]}
+                                    initialView="dayGridMonth"
 
-                                // events={[
-                                //     { title: 'event 1', start: '2020-10-11', end: '2020-10-13' },
-                                //     { title: 'event 2', date: '2020-10-15' }
-                                // ]}
+                                    events={this.state.formattedArray}
 
-                                eventContent={renderEventContent}
+                                //eventContent={renderEventContent}
                                 />
 
                         
@@ -93,13 +114,13 @@ class CmCalendar extends Component {
     }
 }
 
-function renderEventContent(eventInfo) {
-    return (
-      <>
-        <b>{eventInfo.timeText}</b>
-        <i>{eventInfo.event.title}</i>
-      </>
-    )
-}
+// function renderEventContent(eventInfo) {
+//     return (
+//       <>
+//         <b>{eventInfo.timeText}</b>
+//         <i>{eventInfo.event.title}</i>
+//       </>
+//     )
+// }
  
 export default CmCalendar;

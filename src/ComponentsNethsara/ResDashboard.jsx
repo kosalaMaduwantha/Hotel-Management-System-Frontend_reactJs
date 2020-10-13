@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Rockfort from '../images/1.png';
 import {Table} from 'react-bootstrap';
 import './css/CmDashboard.css';
+import Button from 'react-bootstrap/Button'
 import { Select } from 'antd';
 
 const { Option } = Select;
@@ -84,6 +85,7 @@ class ResDashboard extends Component {
                             <Table striped bordered hover>
                                 <thead>
                                     <tr>
+                                        <th>Reservation Id</th>
                                         <th>Request</th>
                                         <th>Check-In</th>
                                         <th>Check-Out</th>
@@ -95,10 +97,11 @@ class ResDashboard extends Component {
                                     {this.state.reservation.map((item) => {
                                             return(
                                                 <tr>
+                                                    <td>{item.res_id}</td>
                                                     <td>{item.room_type}</td>
                                                     <td>{item.check_in_date}</td>
                                                     <td>{item.check_out_date}</td>
-                                                    <td>
+                                                    <td style={{}}>
                                                         <Select defaultValue={item.room_id} style={{ width: 120 }} onChange={handleChange}>
                                                             {this.state.rooms.map((item) => {
                                                                 return(
@@ -106,6 +109,7 @@ class ResDashboard extends Component {
                                                                 );
                                                             })}
                                                         </Select>
+                                                        <Button variant="primary" style={{marginLeft:"20px"}}>Assign</Button>
                                                     </td>
                                                 </tr>
                                             );
@@ -114,7 +118,51 @@ class ResDashboard extends Component {
                             </Table>
                         </div>
                     </div>
+
+                    <div className="stat-card-div">
+
+                        <h3 className="stat-card-head" style={{paddingTop:"30px"}}>Rock fort Unawatuna</h3>
+
+                        <div style={{padding:"20px"}}>
+                            <Table striped bordered hover>
+                                <thead>
+                                    <tr>
+                                        <th>Reservation Id</th>
+                                        <th>Request</th>
+                                        <th>Check-In</th>
+                                        <th>Check-Out</th>
+                                        <th>Assign a Room</th>
+                                    </tr>
+                                </thead>
+
+                                <tbody>
+                                    {this.state.reservation.map((item) => {
+                                            return(
+                                                <tr>
+                                                    <td>{item.res_id}</td>
+                                                    <td>{item.room_type}</td>
+                                                    <td>{item.check_in_date}</td>
+                                                    <td>{item.check_out_date}</td>
+                                                    <td style={{}}>
+                                                        <Select defaultValue={item.room_id} style={{ width: 120 }} onChange={handleChange}>
+                                                            {this.state.rooms.map((item) => {
+                                                                return(
+                                                                <Option>{item.room_id}</Option>
+                                                                );
+                                                            })}
+                                                        </Select>
+                                                        <Button variant="primary" style={{marginLeft:"20px"}}>Assign</Button>
+                                                    </td>
+                                                </tr>
+                                            );
+                                        })}
+                                </tbody>
+                            </Table>
+                        </div>
+                    </div>
+
                 </div>
+                
                 
             </div>
         );
