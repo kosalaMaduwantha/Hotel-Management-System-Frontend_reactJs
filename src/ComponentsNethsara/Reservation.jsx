@@ -1,4 +1,7 @@
 import React, { Component } from 'react'
+import ReservationSuccess from './ReservationSuccess';
+import jsPDF from "jspdf";
+import "jspdf-autotable";
 import './css/Reservation.css';
 import Reserve from '../images/reserve.png'
 import AccomodationLogo from '../images/reservimg.png'
@@ -6,17 +9,19 @@ import SocialButtons from './SocialButtons'
 import Footer01 from './Footer01'
 import { message, notification, Spin  } from "antd"
 import { Select } from 'antd';
+// Date Fns is used to format the dates we receive
+// from our API call
+import { format } from "date-fns";
 
 const { Option } = Select;
 
-function handleChange(value) {
-    console.log(`selected ${value}`);
-  }
 
 export class Reservation extends Component {
 
     constructor(props) {
         super(props)
+
+        
         this.state = {
             fname:"",
             lname:"",
@@ -24,15 +29,26 @@ export class Reservation extends Component {
             email:"",
             phone:"",
             country:"",
-            // children:"",
-            //cINdate:"",
-            // cOUTdate:"",
-            // adults:""
+            roomType:"",
+            children:"",
+            cINdate:"",
+            cOUTdate:"",
+            adults:"",
+            headStatus:""
+            
         }
         this.handleInput = this.handleInput.bind(this)
         this.OnSubmit = this.OnSubmit.bind(this)
     }
 
+    randomStr = (len, arr) => { 
+        var ans = ''; 
+        for (var i = len; i > 0; i--) { 
+            ans +=  
+              arr[Math.floor(Math.random() * arr.length)]; 
+        } 
+        return ans; 
+    } 
     
     componentDidMount(){
         //this.OnSubmit();
@@ -58,6 +74,56 @@ export class Reservation extends Component {
         }
     };
 
+    //select the room type from the drop down
+    selectRoom = (value) =>{
+        //console.log(value);
+        this.setState({roomType:value})
+    }
+
+    //generate a reservation confirm PDF
+    generatePDF = (reservationData) => {
+        //initilize the pds
+        const doc = new jsPDF();
+
+        //column definition
+        const tableColumns = ["Reservation ID", "Customer Email", "Room Type", "Paid Status"];
+        const tableRows = [];
+
+        const rowdata = [
+            reservationData.res_id,
+            reservationData.cID,
+            reservationData.room_type,
+            reservationData.paid_status
+        ];
+
+        tableRows.push(rowdata);
+        
+        doc.autoTable(tableColumns, tableRows, { startY: 20 });
+
+        const tableColumns2 = ["Check In", "Check Out", "Created date", "Adults", "Children"];
+        const tableRows2 = [];
+
+        const rowdata2 = [
+            reservationData.check_in_date,
+            reservationData.check_out_date,
+            reservationData.date_time,
+            reservationData.adults,
+            reservationData.children,
+        ];
+
+        tableRows2.push(rowdata2);
+        
+        doc.autoTable(tableColumns2, tableRows2, { sstartY: doc.lastAutoTable.finalY + 50 });
+
+
+        const date = Date().split(" ");
+        //the filename will be the current systems date
+        const dateStr = date[0] + date[1] + date[2] + date[3] + date[4];
+        doc.text("Your "+ reservationData.room_type + " room reservation report for "  + reservationData.check_in_date + " to " + reservationData.check_out_date, 14, 15);
+        doc.save(`report_${dateStr}.pdf`);
+
+    }
+
     OnSubmit = (e) => {
         
         e.preventDefault();
@@ -69,12 +135,8 @@ export class Reservation extends Component {
             nic:this.state.nic,
             email:this.state.email,
             phone:this.state.phone,
-            country:this.state.country,
-            // cINdate:this.state.cINdate,
-            // cOUTdate:this.state.cOUTdate,
-            // adults:this.state.adults,
-            // children:this.state.children
-        };
+            country:this.state.country
+        }
 
         // const args = {
         //     message: <Spin />,
@@ -83,6 +145,7 @@ export class Reservation extends Component {
         //     duration: 0,
         //   };
         //   notification.open(args);
+
         console.log(custData);
 
         fetch("http://127.0.0.1:8000/customer-create/", {
@@ -90,13 +153,53 @@ export class Reservation extends Component {
         headers: {
           "Content-type": "application/json",
         },
-        body: JSON.stringify(custData),
+        body: JSON.stringify(custData)
 
+      })//.then((response) => {})
+      .catch((err) => console.log(err)) 
+
+      const resData = {
+                res_id:"res"+this.randomStr(3,'12345abcdef'),
+                room_type:this.state.roomType,
+                check_in_date:this.state.cINdate,
+                check_out_date:this.state.cOUTdate,
+                adults:this.state.adults,
+                children:this.state.children,
+                date_time:new Date().toISOString().slice(0, 10),
+                paid_status:"Pending",
+                cID:this.state.email,
+                room_id:null,
+                ro_id:null
+
+      }
+
+      //this.generatePDF(resData);
+
+      console.log(resData);
+      fetch("http://127.0.0.1:8000/reservation-create/", {
+        method: "POST",
+        headers: {
+          "Content-type": "application/json",
+        },
+        body: JSON.stringify(resData)
+
+      }).then((response) => {
+        // alert(response.status)
+        this.setState({ headStatus: response.status });
+        if(response.status == 200){
+            this.generatePDF(resData);
+        }
       })
+      .catch((err) => console.log(err)) 
+
+ 
     }
     
 
     render() {
+        if (this.state.headStatus == "200") {
+        return <ReservationSuccess />;
+      } else {
         return (
             <div >
                 <SocialButtons/>
@@ -165,7 +268,9 @@ export class Reservation extends Component {
                         <tr>
                             <td>Room Type : </td>
                             <td>
-                                <Select defaultValue="Please select the room type from the drop down"  style={{ width: 500, marginLeft:"25px"}} onChange={handleChange}>
+                                <Select defaultValue="Please select the room type from the drop down"  
+                                    style={{ width: 500, marginLeft:"25px"}}
+                                    onChange={(value) => this.selectRoom(value)}>
                                     <Option value="Standard">Standard</Option>
                                     <Option value="Deluxe">Deluxe</Option>
                                     <Option value="Deluxe Double">Deluxe Double</Option>
@@ -210,7 +315,7 @@ export class Reservation extends Component {
                 </div>
                 <Footer01/>
             </div>
-        )
+        )}
     }
 }
 
