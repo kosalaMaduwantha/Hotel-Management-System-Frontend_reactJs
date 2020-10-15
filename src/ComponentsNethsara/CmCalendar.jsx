@@ -3,6 +3,7 @@ import FullCalendar from '@fullcalendar/react';
 import dayGridPlugin from '@fullcalendar/daygrid';
 import Rockfort from '../images/1.png';
 import './css/CmDashboard.css';
+import { Button } from 'antd'
 
 
 class CmCalendar extends Component {
@@ -34,7 +35,7 @@ class CmCalendar extends Component {
         this.state.reservation.map(item => {
             return(
                 obj = {
-                    title:item.res_id,
+                    title:"Reservation "+item.res_id+" "+item.cID,
                     start:item.check_in_date,
                     end:item.check_out_date
                 }, formattedData.push(obj)
@@ -88,9 +89,11 @@ class CmCalendar extends Component {
 
                         <h2 className="content-head">Reservation Calendar</h2>
 
-                        <button onClick={this.formatData}>check</button>
-
                         <div className="stat-card-div" style={{padding:"20px", zIndex:"-5"}}>
+
+                        <Button type="primary" block onClick={this.formatData} style={{marginBottom:"20px"}}>
+                            Check Reservations
+                        </Button>
                             
                                 <FullCalendar 
                                     style={{zIndex:"5"}}
@@ -113,14 +116,5 @@ class CmCalendar extends Component {
          );
     }
 }
-
-// function renderEventContent(eventInfo) {
-//     return (
-//       <>
-//         <b>{eventInfo.timeText}</b>
-//         <i>{eventInfo.event.title}</i>
-//       </>
-//     )
-// }
  
 export default CmCalendar;

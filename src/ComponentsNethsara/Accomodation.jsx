@@ -76,7 +76,31 @@ export class Accomodation extends Component {
                         </div>
 
                         <div className="col-sm-12 col-md-6 col-lg-6" style={{textAlign:"left", marginTop:"50px"}}>
-                            <h3>Deluxe Room</h3>
+                            <h3>Deluxe Room - Single</h3>
+                            <p>Delux double room with sea view room with comfortable stay with pool access</p>
+                            <ul>
+                                <li>Mini bar</li>
+                                <li>Air conditioned</li>
+                                <li>King Size bed</li>
+                                <li>Pool access</li>
+                            </ul>
+                            
+                            <Link to="/reservation">
+                                <button className="y-btn mt-2" >BOOK NOW</button>
+                            </Link>
+                        </div>
+
+                        
+                    </div>
+
+                    <div className="row" style={{overflowX:"hidden", marginTop:"100px", marginBottom:"100px"}}>
+                        
+                        <div className="col-sm-12 col-md-6 col-lg-6">
+                            <img src={Room2} alt="" style={{width:"500px", marginLeft:"100px"}} />
+                        </div>
+
+                        <div className="col-sm-12 col-md-6 col-lg-6" style={{textAlign:"left", marginTop:"50px"}}>
+                            <h3>Deluxe Room - Double</h3>
                             <p>Delux double room with sea view room with comfortable stay with pool access</p>
                             <ul>
                                 <li>Mini bar</li>
