@@ -23,7 +23,7 @@ class HomePart01 extends Component {
                                 <button className="yellow-btn mt-2">EVENT</button>
                             </li>
                             <li>
-                                <button className="yellow-btn mt-2">ACCOMODATION</button>
+                                <button className="yellow-btn mt-2" onClick="/accomodation">ACCOMODATION</button>
                             </li>
                             <li>
                                 <button className="yellow-btn mt-2">TRAVEL</button>

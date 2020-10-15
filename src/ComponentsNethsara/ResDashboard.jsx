@@ -102,7 +102,7 @@ class ResDashboard extends Component {
                                                     <td>{item.check_in_date}</td>
                                                     <td>{item.check_out_date}</td>
                                                     <td style={{}}>
-                                                        <Select defaultValue={item.room_id} style={{ width: 120 }} onChange={handleChange}>
+                                                        <Select defaultValue="Select a room"style={{ width: 120 }} onChange={handleChange}>
                                                             {this.state.rooms.map((item) => {
                                                                 return(
                                                                 <Option>{item.room_id}</Option>
@@ -113,49 +113,7 @@ class ResDashboard extends Component {
                                                     </td>
                                                 </tr>
                                             );
-                                        })}
-                                </tbody>
-                            </Table>
-                        </div>
-                    </div>
-
-                    <div className="stat-card-div">
-
-                        <h3 className="stat-card-head" style={{paddingTop:"30px"}}>Rock fort Unawatuna</h3>
-
-                        <div style={{padding:"20px"}}>
-                            <Table striped bordered hover>
-                                <thead>
-                                    <tr>
-                                        <th>Reservation Id</th>
-                                        <th>Request</th>
-                                        <th>Check-In</th>
-                                        <th>Check-Out</th>
-                                        <th>Assign a Room</th>
-                                    </tr>
-                                </thead>
-
-                                <tbody>
-                                    {this.state.reservation.map((item) => {
-                                            return(
-                                                <tr>
-                                                    <td>{item.res_id}</td>
-                                                    <td>{item.room_type}</td>
-                                                    <td>{item.check_in_date}</td>
-                                                    <td>{item.check_out_date}</td>
-                                                    <td style={{}}>
-                                                        <Select defaultValue={item.room_id} style={{ width: 120 }} onChange={handleChange}>
-                                                            {this.state.rooms.map((item) => {
-                                                                return(
-                                                                <Option>{item.room_id}</Option>
-                                                                );
-                                                            })}
-                                                        </Select>
-                                                        <Button variant="primary" style={{marginLeft:"20px"}}>Assign</Button>
-                                                    </td>
-                                                </tr>
-                                            );
-                                        })}
+                                    })}
                                 </tbody>
                             </Table>
                         </div>
