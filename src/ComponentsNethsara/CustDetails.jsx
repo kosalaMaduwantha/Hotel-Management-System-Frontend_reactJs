@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Rockfort from '../images/1.png';
 import {Table} from 'react-bootstrap';
-import './css/CmDashboard.css';
+import './css/cmdashboard.css';
 import { Popconfirm, message,notification  } from 'antd';
 
 class CustDetails extends Component {

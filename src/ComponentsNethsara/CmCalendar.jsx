@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import FullCalendar from '@fullcalendar/react';
 import dayGridPlugin from '@fullcalendar/daygrid';
 import Rockfort from '../images/1.png';
-import './css/CmDashboard.css';
+import './css/cmdashboard.css';
 import { Button } from 'antd'
 
 
